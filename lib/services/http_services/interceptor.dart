@@ -5,7 +5,6 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/app_key/app_key.dart';
-import 'package:flutter_practice/services/http_services/dio_connectivity_retrier.dart';
 
 class DioInterceptorHandeler extends Interceptor {
   // final DioConnectivityRequestRetrier requestRetrier;
@@ -19,13 +18,11 @@ class DioInterceptorHandeler extends Interceptor {
   });
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    // TODO: implement onRequest
     return super.onRequest(options, handler);
   }
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    // TODO: implement onResponse
     super.onResponse(response, handler);
   }
 
