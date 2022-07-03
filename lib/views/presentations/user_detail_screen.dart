@@ -7,16 +7,21 @@ class UserDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocBuilder<UserCubit, UserState>(
-        builder: (context, state) {
-          if (state is LoadingState) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
+    return BlocBuilder<UserCubit, UserState>(
+      builder: (context, state) {
+        if (state is LoadingState) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
 
-          return Center(
+        return Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            elevation: 2.0,
+            iconTheme: const IconThemeData(color: Colors.black),
+          ),
+          body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -48,9 +53,9 @@ class UserDetailScreen extends StatelessWidget {
                 //-----
               ],
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

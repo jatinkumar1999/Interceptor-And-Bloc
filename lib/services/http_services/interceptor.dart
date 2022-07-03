@@ -28,7 +28,7 @@ class DioInterceptorHandeler extends Interceptor {
 
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) {
-// When the USer Change The Connection
+// When the User Change The Connection
 //Then hit The Api Again
 
     print("Error==>>${err.type}");
@@ -114,6 +114,7 @@ class DioInterceptorHandeler extends Interceptor {
       ScaffoldMessenger.of(AppKey.navigatorKey.currentContext!).showSnackBar(
         const SnackBar(
           duration: Duration(milliseconds: 800),
+          clipBehavior: Clip.antiAlias,
           backgroundColor: Colors.red,
           content: Text("no Internet"),
         ),
